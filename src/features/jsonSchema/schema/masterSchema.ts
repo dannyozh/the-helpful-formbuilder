@@ -5,7 +5,7 @@ interface IPropertiesSchema {
   minLength?: number;
 }
 
-interface IMasterSchema {
+export interface IMasterSchema {
   title: string;
   description: string;
   type: string;
