@@ -39,7 +39,7 @@ const RenderedForm = (): JSX.Element => {
     },
   };
 
-  return <Form schema={masterSchema.composite as JSONSchema7} />;
+  return <Form schema={masterSchema() as JSONSchema7} />;
 };
 
 export default RenderedForm;

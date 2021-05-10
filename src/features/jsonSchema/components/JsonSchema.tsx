@@ -1,35 +1,17 @@
 import React from "react";
 import { masterSchema } from "../schema/masterSchema";
+import { Code } from "@chakra-ui/react";
 
 const JsonSchema = (): JSX.Element => {
-  const mappedSchema = Object.keys(masterSchema).map((obj, id) => {
-    const {
-      composite: { title, description, type, required, properties },
-    } = masterSchema;
-    const mappedRequired = required && required.map((x) => `"${x}"`);
-    const mappedProperties = Object.keys(properties).map((x: string) =>
-      Object.keys(properties[x]).map(
-        (y) => `
-    {${x}: {
-     ${y}: ${properties[x][y]}   
-    }}
-    
-    `
-      )
-    );
+  const displayedSchemaAsJson = JSON.stringify(masterSchema());
 
-    return (
-      <>{`{
-        title: "${title}",
-        description: "${description}",
-        type: "${type}",
-        required: [${mappedRequired}],
-        properties: ${mappedProperties}
-    }`}</>
-    );
-  });
-
-  return <div>{mappedSchema}</div>;
+  return (
+    <div>
+      <Code colorScheme="orange" w="320px" variant="outline">
+        {displayedSchemaAsJson}
+      </Code>
+    </div>
+  );
 };
 
 export default JsonSchema;

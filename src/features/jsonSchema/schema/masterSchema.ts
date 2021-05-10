@@ -1,5 +1,22 @@
-export const masterSchema = {
-  composite: {
+interface IPropertiesSchema {
+  title: string;
+  type: string;
+  default?: string;
+  minLength?: number;
+}
+
+interface IMasterSchema {
+  title: string;
+  description: string;
+  type: string;
+  required: string[];
+  properties: {
+    [key: string]: IPropertiesSchema;
+  };
+}
+
+export const masterSchema = (): IMasterSchema => {
+  return {
     title: "A registration form",
     description: "A simple form example",
     type: "object",
@@ -20,5 +37,5 @@ export const masterSchema = {
         minLength: 10,
       },
     },
-  },
+  };
 };
