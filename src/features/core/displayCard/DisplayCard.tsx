@@ -1,5 +1,5 @@
-import { Box } from "@chakra-ui/react";
 import React from "react";
+import { Box } from "@chakra-ui/react";
 
 interface IDisplayCard {
   children: React.ReactNode;
@@ -8,7 +8,7 @@ interface IDisplayCard {
 const DisplayCard = (props: IDisplayCard): JSX.Element => {
   const { children } = props;
   return (
-    <Box borderRadius="md" bg="#FFFFF6" color="black" p={4} w="80%" height="90%">
+    <Box borderRadius="md" bg="white" color="black" p={4} w="80%" height="90%">
       {children}
     </Box>
   );

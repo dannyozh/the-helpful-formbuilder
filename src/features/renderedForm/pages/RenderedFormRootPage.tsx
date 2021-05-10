@@ -1,8 +1,9 @@
 import React from "react";
 import DisplayCard from "../../core/displayCard/DisplayCard";
+import RenderedForm from "../components/RenderedForm";
 
 const RenderedFormRootPage = (): JSX.Element => {
-  return <DisplayCard children={" Rendered form root page"} />;
+  return <DisplayCard children={<RenderedForm />} />;
 };
 
 export default RenderedFormRootPage;
