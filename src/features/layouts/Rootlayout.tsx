@@ -12,8 +12,6 @@ const RootLayout = (props: IRootlLayout): JSX.Element => {
   return (
     <Box textAlign="center" fontSize="xl">
       <Grid minH="100vh" templateRows="repeat(2, 1fr)" templateColumns="repeat(6, 1fr)" gap={4}>
-        {/* <Text>{children}</Text> */}
-
         <GridItem rowSpan={1} colSpan={2} bg="papayawhip" id="big grid" display="flex" alignItems="center" justifyContent="center">
           {selectedFormField}
         </GridItem>

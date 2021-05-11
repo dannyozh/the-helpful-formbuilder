@@ -1,7 +1,14 @@
 export const stringFormSchema = {
-  stringFieldNo: {
+  fieldTitle: {
+    type: "string",
+    title: "Title",
+  },
+  minLength: {
     type: "number",
-    title: "number of string fields",
-    default: 1,
+    title: "Minimum Character Length",
+  },
+  required: {
+    type: "boolean",
+    title: "Required Field",
   },
 };
